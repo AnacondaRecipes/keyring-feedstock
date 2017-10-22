@@ -19,7 +19,7 @@ build:
         - keyring=keyring.cli:main
 
 requirements:
-    build:
+    host:
         - python
         - setuptools
         - setuptools_scm >=1.15.0
