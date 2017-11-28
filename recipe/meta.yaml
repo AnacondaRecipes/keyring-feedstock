@@ -1,4 +1,4 @@
-{% set version = "10.4.0" %}
+{% set version = "10.5.0" %}
 
 package:
     name: keyring
@@ -7,7 +7,7 @@ package:
 source:
     fn: keyring-{{ version }}.tar.gz
     url: https://pypi.io/packages/source/k/keyring/keyring-{{ version }}.tar.gz
-    sha256: 901a3f4ed0dfba473060281b58fd3b649ce70f59cb34a9cf6cb5551218283b26
+    sha256: 0e6129e8c5bc80da34cc1942d30daad79ed40419fcaaa538278c3b2ff235b313
     patches:
         - verbose-tests.patch
         - use-pywin32.patch
@@ -48,6 +48,7 @@ test:
 about:
     home: https://github.com/jaraco/keyring
     license: Python Software Foundation or MIT
+    license_family: MIT
     summary: 'Store and access your passwords safely.'
     description: |
       the python keyring lib provides a easy way to access the system keyring
