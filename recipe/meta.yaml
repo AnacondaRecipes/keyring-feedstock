@@ -7,6 +7,8 @@ package:
 source:
   url: https://pypi.io/packages/source/k/keyring/keyring-{{ version }}.tar.gz
   sha256: 6232b972dfbd44fd9bd649242dbf17f616988b152d4268f9ca1dcc704b467381
+  patches:
+      - use-pywin32.patch
 
 build:
   number: 0
@@ -21,7 +23,7 @@ requirements:
     - setuptools_scm >=1.15.0
   run:
     - python
-    - pywin32-ctypes  # [win]
+    - pywin32  # [win]
     - entrypoints
     - secretstorage  # [linux and py3k]
 

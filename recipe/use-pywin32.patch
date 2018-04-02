@@ -1,0 +1,13 @@
+diff --git a/setup.py b/setup.py
+index d90977b..d1caf68 100644
+--- a/setup.py
++++ b/setup.py
+@@ -29,7 +29,7 @@ params = dict(
+     ],
+     extras_require={
+         ':sys_platform=="win32"': [
+-            'pywin32-ctypes!=0.1.0,!=0.1.1',
++            'pywin32',
+         ],
+         ':sys_platform=="linux2" or sys_platform=="linux"': [
+             "secretstorage",
