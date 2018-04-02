@@ -32,12 +32,20 @@ requirements:
 test:
   requires:
     - pip
+    - pytest >=2.8
+    - pytest-runner
+    - setuptools_scm >=1.15.0
+  source_files:
+      - tests/*
   imports:
     - keyring
     - keyring.backends
     - keyring.util
   commands:
     - pip check
+    # skip tests on OS-X, the default keychain is not available in the
+    # build environment
+    - py.test -v tests  # [not osx]
     - keyring --help
 
 about:
