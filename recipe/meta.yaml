@@ -8,6 +8,8 @@ source:
     fn: keyring-{{ version }}.tar.gz
     url: https://files.pythonhosted.org/packages/source/k/keyring/keyring-{{ version }}.tar.gz
     sha256: 846c9c709ee1203bac5444abec19b5228f4601377686f33cba672aa0ba313abd
+    patches:
+        - use-pywin32.patch
 
 build:
     number: 0
@@ -20,11 +22,11 @@ requirements:
         - python
         - setuptools
         - setuptools_scm >=1.15.0
-        - pywin32-ctypes  # [win]
+        - pywin32  # [win]
         - entrypoints
     run:
         - python
-        - pywin32-ctypes  # [win]
+        - pywin32  # [win]
         - entrypoints
 
 test:
