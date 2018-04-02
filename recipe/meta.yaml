@@ -31,6 +31,8 @@ requirements:
         - secretstorage  # [linux and py3k]
 
 test:
+    source_files:
+        - keyring/tests/*
     imports:
         - keyring
         - keyring.backends
@@ -38,7 +40,14 @@ test:
         - keyring.tests.backends
         - keyring.util
     commands:
+        # skip tests on OS-X, the default keychain is not available in the
+        # build environment
+        - py.test -v keyring/tests  # [not osx]
         - keyring --help
+    requires:
+        - pytest >=2.8
+        - pytest-runner
+        - setuptools_scm >=1.15.0
 
 about:
     home: https://github.com/jaraco/keyring
