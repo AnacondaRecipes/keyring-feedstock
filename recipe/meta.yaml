@@ -1,4 +1,4 @@
-{% set version = "15.1.0" %}
+{% set version = "16.0.0" %}
 
 package:
   name: keyring
@@ -6,7 +6,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/k/keyring/keyring-{{ version }}.tar.gz
-  sha256: 6232b972dfbd44fd9bd649242dbf17f616988b152d4268f9ca1dcc704b467381
+  sha256: 8a9b0c2c2abc3e7326559f840e1f05e6d010ccaf397d09f450485920ba08e443
   patches:
       - use-pywin32.patch
 
