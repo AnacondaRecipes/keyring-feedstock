@@ -18,7 +18,6 @@ build:
 requirements:
   build:
     - python                                 # [build_platform != target_platform]
-    # - cross-python_{{ target_platform }}     # [build_platform != target_platform]
   host:
     - python
     - pip
@@ -48,6 +47,12 @@ about:
   license: MIT
   license_file: LICENSE
   summary: Store and access your passwords safely
+  description: |
+    the python keyring lib provides a easy way to access the system keyring
+    service from python.  it can be used in any application that needs safe
+    password storage.
+  doc_url: https://pypi.org/project/keyring/
+  doc_source_url: https://github.com/jaraco/keyring/blob/master/readme.rst
 
 extra:
   recipe-maintainers:
