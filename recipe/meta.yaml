@@ -28,33 +28,24 @@ requirements:
     - python
     - pywin32-ctypes  # [win]
     - secretstorage >=3.2  # [linux]
-    - importlib_metadata >=1  # [py<38]
+    - importlib_metadata >=3.6
     - jeepney >=0.4.2  # [linux]
 
 test:
   requires:
     - pip
-    - pytest >=2.8
-    - pytest-runner
-    - setuptools_scm >=1.15.0
-  source_files:
-      - tests/*
   imports:
     - keyring
     - keyring.backends
     - keyring.util
   commands:
     - pip check
-    # skip tests on OS-X, the default keychain is not available in the
-    # build environment
-    - py.test -v tests  # [not osx]
     - keyring --help
 
 about:
   home: https://github.com/jaraco/keyring
   license: MIT
   license_file: LICENSE
-  license_family: MIT
   summary: Store and access your passwords safely
   description: |
     the python keyring lib provides a easy way to access the system keyring
@@ -65,7 +56,6 @@ about:
 
 extra:
   recipe-maintainers:
-    - ericdill
     - licode
     - tacaswell
     - ccordoba12
