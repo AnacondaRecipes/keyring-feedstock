@@ -26,7 +26,7 @@ requirements:
     - toml
   run:
     - python
-    - pywin32-ctypes  # [win]
+    - pywin32-ctypes !=0.1.0,!=0.1.1  # [win]
     - secretstorage >=3.2  # [linux]
     - importlib_metadata >=3.6
     - jeepney >=0.4.2  # [linux]
@@ -35,6 +35,8 @@ test:
   requires:
     - pip
     - pytest >=4.6
+    - pytest-flake8
+    - pytest-cov
     - pytest-runner
     - setuptools_scm >=1.15.0
   source_files:
@@ -53,6 +55,7 @@ test:
 about:
   home: https://github.com/jaraco/keyring
   license: MIT
+  license_family: MIT
   license_file: LICENSE
   summary: Store and access your passwords safely
   description: |
