@@ -44,8 +44,7 @@ test:
     - keyring.util
   commands:
     - pip check
-    # skip tests on OS-X, the default keychain is not available in the
-    # build environment
+    # skip tests on OS-X, the default keychain is not available in the build environment
     - py.test -v tests  # [not osx]
     - keyring --help
 
