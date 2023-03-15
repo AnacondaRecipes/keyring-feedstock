@@ -59,7 +59,6 @@ about:
     service from python.  it can be used in any application that needs safe
     password storage.
   doc_url: https://pypi.org/project/keyring/
-  doc_source_url: https://github.com/jaraco/keyring/blob/master/readme.rst
   dev_url: https://github.com/jaraco/keyring
 
 extra:
