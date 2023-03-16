@@ -1,4 +1,4 @@
-{% set version = "23.4.0" %}
+{% set version = "23.13.1" %}
 
 package:
   name: keyring
@@ -6,11 +6,11 @@ package:
 
 source:
   url: https://pypi.io/packages/source/k/keyring/keyring-{{ version }}.tar.gz
-  sha256: 88f206024295e3c6fb16bb0a60fb4bb7ec1185629dc5a729f12aa7c236d01387
+  sha256: ba2e15a9b35e21908d0aaf4e0a47acc52d6ae33444df0da2b49d41a46ef6d678
 
 build:
   number: 0
-  skip: true  # [py<36]
+  skip: true  # [py<38]
   script: {{ PYTHON }} -m pip install . --no-deps -vv
   entry_points:
     - keyring = keyring.cli:main
@@ -19,16 +19,18 @@ requirements:
   host:
     - python
     - pip
-    - setuptools >=56
-    - setuptools_scm >=3.4.1
+    - setuptools
+    - setuptools_scm
     - toml
     - wheel
   run:
     - python
-    - pywin32-ctypes !=0.1.0,!=0.1.1  # [win]
+    - pywin32-ctypes >=0.2.0  # [win]
     - secretstorage >=3.2  # [linux]
-    - importlib_metadata >=3.6
     - jeepney >=0.4.2  # [linux]
+    - importlib_metadata >=4.11.4  # [py<312]
+    - jaraco.classes
+    - importlib_resources  # [py<39]
 
 test:
   requires:
@@ -59,7 +61,6 @@ about:
     service from python.  it can be used in any application that needs safe
     password storage.
   doc_url: https://pypi.org/project/keyring/
-  doc_source_url: https://github.com/jaraco/keyring/blob/master/readme.rst
   dev_url: https://github.com/jaraco/keyring
 
 extra:
