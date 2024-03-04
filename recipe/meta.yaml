@@ -25,7 +25,7 @@ requirements:
     - wheel
   run:
     - python
-    - pywin32-ctypes >=0.2.0  # [win]
+    - pywin32-ctypes >=0.2.2  # [win]
     - secretstorage >=3.2  # [linux]
     - jeepney >=0.4.2  # [linux]
     - importlib_metadata >=4.11.4  # [py<312]
