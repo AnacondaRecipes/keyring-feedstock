@@ -31,6 +31,8 @@ requirements:
     - importlib_metadata >=4.11.4  # [py<312]
     - jaraco.classes
     - importlib_resources  # [py<39]
+  run_constrained:
+    - shtab >= 1.1.0
 
 test:
   requires:
