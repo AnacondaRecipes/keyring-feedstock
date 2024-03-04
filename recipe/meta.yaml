@@ -6,7 +6,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/k/keyring/keyring-{{ version }}.tar.gz
-  sha256: ba2e15a9b35e21908d0aaf4e0a47acc52d6ae33444df0da2b49d41a46ef6d678
+  sha256: c3327b6ffafc0e8befbdb597cacdb4928ffe5c1212f7645f186e6d9957a898db
 
 build:
   number: 0
