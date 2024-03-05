@@ -1,4 +1,4 @@
-{% set version = "23.13.1" %}
+{% set version = "24.3.1" %}
 
 package:
   name: keyring
@@ -6,12 +6,12 @@ package:
 
 source:
   url: https://pypi.io/packages/source/k/keyring/keyring-{{ version }}.tar.gz
-  sha256: ba2e15a9b35e21908d0aaf4e0a47acc52d6ae33444df0da2b49d41a46ef6d678
+  sha256: c3327b6ffafc0e8befbdb597cacdb4928ffe5c1212f7645f186e6d9957a898db
 
 build:
   number: 0
   skip: true  # [py<38]
-  script: {{ PYTHON }} -m pip install . --no-deps -vv
+  script: {{ PYTHON }} -m pip install . --no-deps --no-build-isolation -vv
   entry_points:
     - keyring = keyring.cli:main
 
@@ -25,12 +25,14 @@ requirements:
     - wheel
   run:
     - python
-    - pywin32-ctypes >=0.2.0  # [win]
+    - pywin32-ctypes >=0.2.2  # [win]
     - secretstorage >=3.2  # [linux]
     - jeepney >=0.4.2  # [linux]
     - importlib_metadata >=4.11.4  # [py<312]
     - jaraco.classes
     - importlib_resources  # [py<39]
+  run_constrained:
+    - shtab >= 1.1.0
 
 test:
   requires:
