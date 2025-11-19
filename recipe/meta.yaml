@@ -1,11 +1,12 @@
 {% set version = "25.7.0" %}
+{% set name = "keyring" %}
 
 package:
-  name: keyring
+  name: {{ name }}
   version: {{ version }}
 
 source:
-  url: https://pypi.org/packages/source/k/keyring/keyring-{{ version }}.tar.gz
+  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
   sha256: fe01bd85eb3f8fb3dd0405defdeac9a5b4f6f0439edbb3149577f244a2e8245b
 
 build:
@@ -22,7 +23,6 @@ requirements:
     - setuptools >=77
     - toml
     - setuptools-scm >=3.4.1
-    - coherent.licensed
   run:
     - python
     - pywin32-ctypes >=0.2.0  # [win]
@@ -65,7 +65,7 @@ about:
     The python keyring lib provides a easy way to access the system keyring
     service from python.  it can be used in any application that needs safe
     password storage.
-  doc_url: https://pypi.org/project/keyring/
+  doc_url: https://pypi.org/project/keyring
   dev_url: https://github.com/jaraco/keyring
 
 extra:
